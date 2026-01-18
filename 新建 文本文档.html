@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人健康管理指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root { --brand: #3b82f6; }
+        body { font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif; transition: background 0.3s ease; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(229, 231, 235, 0.5); }
+        .dark .glass { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+
+    <nav class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold tracking-tight text-brand">
+                <i data-lucide="heart-pulse"></i><span>健康指南看板</span>
+            </div>
+            <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                <i data-lucide="sun-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+        
+        <section class="fade-in" style="animation-delay: 0.1s;">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="activity" class="text-brand"></i>
+                <h2 class="text-2xl font-bold">病情诊断</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <div class="glass p-5 rounded-2xl card-hover border-l-4 border-red-500">
+                    <div class="font-bold text-slate-400 mb-1">稳定型心绞痛</div>
+                    <p>主要血管目前堵塞约 50%</p>
+                </div>
+                <div class="glass p-5 rounded-2xl card-hover border-l-4 border-orange-500">
+                    <div class="font-bold text-slate-400 mb-1">高血压 2 级 (极高危)</div>
+                    <p>高血压性心脏病</p>
+                </div>
+                <div class="glass p-5 rounded-2xl card-hover border-l-4 border-blue-500">
+                    <div class="font-bold text-slate-400 mb-1">桥本氏甲减</div>
+                    <p>需严格减少碘的摄入</p>
+                </div>
+            </div>
+            <div class="glass p-4 rounded-xl mt-4 flex flex-wrap gap-4 text-xs text-slate-500">
+                <span class="flex items-center gap-1"><i data-lucide="info" size="14"></i> 高脂血症</span>
+                <span class="flex items-center gap-1"><i data-lucide="info" size="14"></i> 双侧颈总动脉硬化并斑块</span>
+                <span class="flex items-center gap-1"><i data-lucide="info" size="14"></i> 主动脉硬化</span>
+                <span class="flex items-center gap-1"><i data-lucide="info" size="14"></i> 脂肪肝</span>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-8 fade-in" style="animation-delay: 0.2s;">
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold flex items-center gap-2 text-brand"><i data-lucide="sun"></i> 白天服药</h2>
+                <div class="glass rounded-2xl overflow-hidden divide-y divide-slate-200 dark:divide-slate-800">
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">左甲状腺素钠片 (75ug)</div>
+                            <div class="text-xs text-slate-500">治疗甲减</div>
+                        </div>
+                        <span class="font-bold text-brand text-lg">1.5 片</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">沙库巴曲缬沙坦 (100mg)</div>
+                            <div class="text-xs text-slate-500">降血压</div>
+                        </div>
+                        <span class="font-bold text-brand text-lg">1 片</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">琥珀酸美托洛尔 (23.75mg)</div>
+                            <div class="text-xs text-slate-500">冠心病+降压</div>
+                        </div>
+                        <span class="font-bold text-brand text-lg">0.5 片</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold flex items-center gap-2 text-indigo-400"><i data-lucide="moon"></i> 晚上服药</h2>
+                <div class="glass rounded-2xl overflow-hidden divide-y divide-slate-200 dark:divide-slate-800">
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">瑞舒伐他汀钙片 (10mg)</div>
+                            <div class="text-xs text-slate-500">治疗冠心病</div>
+                        </div>
+                        <span class="font-bold text-brand text-lg">1 片</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">阿司匹林肠溶片 (100mg)</div>
+                            <div class="text-xs text-slate-500">预防血栓</div>
+                        </div>
+                        <span class="font-bold text-brand text-lg">1 片</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass p-8 rounded-3xl bg-gradient-to-br from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-900 fade-in" style="animation-delay: 0.3s;">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="utensils" class="text-brand"></i>
+                <h2 class="text-2xl font-bold">健康饮食红黑榜</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-green-500 font-bold flex items-center gap-2"><i data-lucide="check-circle-2"></i> 放心吃</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">燕麦片</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">蛋清</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">脱脂奶</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">深色蔬菜</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">鱼类/虾仁</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">蓝莓/草莓</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm">无盐坚果</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 italic">注意：低钠（<120mg/100g）和低碳水（<10g/100g）是首选标准。</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-red-500 font-bold flex items-center gap-2"><i data-lucide="alert-octagon"></i> 严格避免</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">油炸食品</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">肥肉/内脏</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">腊肉/香肠</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">蛋黄</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">白馒头/白面</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 rounded-full text-sm">含糖饮料</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6 fade-in" style="animation-delay: 0.4s;">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="calendar" class="text-brand"></i>
+                <h2 class="text-2xl font-bold">重要复查日程</h2>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass p-5 rounded-2xl border-t-4 border-brand">
+                    <div class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">甲减复查</div>
+                    <div class="text-lg font-bold">2025-01-17</div>
+                </div>
+                <div class="glass p-5 rounded-2xl">
+                    <div class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">冠心病复查 Q1</div>
+                    <div class="text-lg font-bold text-slate-400">2026-03-17</div>
+                </div>
+                <div class="glass p-5 rounded-2xl">
+                    <div class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">冠心病复查 Q2</div>
+                    <div class="text-lg font-bold text-slate-400">2026-06-17</div>
+                </div>
+                <div class="glass p-5 rounded-2xl">
+                    <div class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">冠心病复查 Q3</div>
+                    <div class="text-lg font-bold text-slate-400">2026-09-17</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center text-slate-400 text-xs border-t border-slate-200 dark:border-slate-800">
+        <p>© 2025-2026 健康守护管理看板 · 祝您身体健康</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
